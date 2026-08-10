@@ -105,6 +105,8 @@ Measured from the actual binary, not guessed. Exit codes: 0 ok, 1 broken, 2 noth
 - **retry on missing post** → `no post with id nope in the queue`. Exit 1.
 - **status on empty queue** → `queue is empty`. Exit 2.
 - **drain with nothing due** → `nothing to drain; queue has no due posts`. Exit 2.
+- **publish crashes mid-upload** → the attempt stays in `publishing` state. `drain` will not retry it (publishing means "in progress"). Run `publicador retry <id>` to reset it. A future version will detect stale publishing attempts automatically.
+- **uploader runs longer than 600s** → publicador kills it with `uploader timed out after 600s for <platform>`. For very large uploads (long YouTube videos on slow links), raise the uploader's own timeout if it has one; publicador's cap covers IG (90s max), TT (10 min max), and most YT uploads.
 
 ## Needs
 
