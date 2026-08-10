@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "publicador"
+version = "0.1.0"
+description = "Drop a post spec, publicador queues, retries, schedules, and dispatches it to every platform"
+requires-python = ">=3.9"
+dependencies = [
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+publicador = "publicador.cli:app"
+
+[tool.setuptools]
+packages = ["publicador"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
