@@ -5,10 +5,27 @@
   "input": "a spec.json path as the first argument: {caption, media, platforms, schedule_at?}",
   "output": "queued post id and per-platform publish results on stdout; --json for a machine envelope",
   "kind": "module",
-  "tags": ["publishing", "scheduler", "queue", "retry", "instagram", "tiktok", "youtube"],
+  "tags": [
+    "publishing",
+    "scheduler",
+    "queue",
+    "retry",
+    "instagram",
+    "tiktok",
+    "youtube"
+  ],
   "license": "MIT",
-  "requires": ["python>=3.9"],
-  "needs": ["edersonff/cookie-manager"],
-  "entry": { "cli": "publicador" },
-  "cost": { "model": "free" }
+  "requires": [
+    "python>=3.9"
+  ],
+  "needs": [
+    "edersonff/cookie-manager"
+  ],
+  "entry": {
+    "cli": "publicador"
+  },
+  "cost": {
+    "model": "free"
+  },
+  "example": "test-post.json"
 }
